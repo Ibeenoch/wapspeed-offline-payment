@@ -2,8 +2,6 @@ import { View, Text, StyleSheet, ActivityIndicator, useColorScheme } from 'react
 import React from 'react'
 import { BlurView } from 'expo-blur';
 import className from 'twrnc';
-import MLetter from '../assets/monieLetterLogo.svg';
-import MLetterBlue from '../assets/monieLogoLetterWhite.svg';
 
 const SpinnerModal = () => {
     const currentMode = useColorScheme();
@@ -16,13 +14,7 @@ const SpinnerModal = () => {
         <View style={styles.tube} />
       </View>
       {/* ActivityIndicator  */}
-      {
-        currentMode === 'light' ? (
-          <MLetterBlue width={75} height={75} style={className`mt-2`}  />
-        ) : (
-          <MLetter width={75} height={75} style={className`mt-2`}  />
-        )
-      }
+      
       
       <ActivityIndicator size={72}  color={currentMode === 'light' ? '#ffffff' : '#ffd75b'  } style={[styles.spinner, className``]} />
     </View>
