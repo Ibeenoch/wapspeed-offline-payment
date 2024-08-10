@@ -21,6 +21,7 @@ import SettingOrange from '../../assets/icons/setting-orange-icon.svg';
 import SettingInactive from '../../assets/icons/setting-icon-inactive.svg';
 import SettingWhite from '../../assets/icons/setting-white-icon.svg';
 import WarpSpeed from '../../assets/icons/warpspeed-logo-white.svg'
+import ArrowBack from '../../assets/icons/arrow-back-icon.svg'
 
 
 
@@ -135,8 +136,21 @@ const  Tablayout = () => {
         }} />
         <Tabs.Screen name='payment'  options={{
           title: 'Payment',
+          headerShown: true,
+          headerTitle: 'Payment',
+          headerTitleAlign: 'center',
+          headerLeft: () => {
+            return (
+              <View style={className`pl-4`}>
+                <TouchableOpacity onPress={() => router.back()}>
+                  <ArrowBack width={28} height={28}  />
+                </TouchableOpacity>
+              </View>
+            )
+          },
           tabBarIcon: () => {
-            return  <View style={className`flex-row justify-center items-center`}>
+            return  (
+                    <View style={className`flex-row justify-center items-center`}>
                       {
                         currentMode === 'light' ? (
                           activeTabs === 'payment' ? <PaymentOrange width={34} height={34}  /> : <PaymentInactive width={24} height={24}   />
@@ -145,6 +159,7 @@ const  Tablayout = () => {
                         )
                       }
                     </View>
+                    )
           },
           tabBarLabelStyle: {
             fontSize: 12,

@@ -90,7 +90,7 @@ const Home = () => {
               <View style={className` flex-row items-center justify-between px-4`}>
 
                 <View style={className` `}>
-                  <Text style={className`text-xl font-bold text-[#a9a9a9]`} >Hello,</Text>
+                  <Text style={className`text-xl font-bold text-gray-600`} >Hello,</Text>
                   <Text style={className`text-3xl font-bold text-white`} >Adebisi!</Text>
                 </View>
 

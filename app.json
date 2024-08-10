@@ -28,7 +28,15 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow WaspSpeed to access your camera",
+          "microphonePermission": "Allow WaspSpeed to access your microphone",
+          "recordAudioAndriod": true
+        }
+      ]
     ],
     "extra": {
       "router": {

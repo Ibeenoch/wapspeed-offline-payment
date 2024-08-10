@@ -17,6 +17,28 @@ const App = () => {
         <>
             <Stack>
                 <Stack.Screen name='(tabs)'  options={{ headerShown: false,   }}  />
+                <Stack.Screen name='offline'  options={{ 
+                   headerStyle: {
+                    backgroundColor: '#ff9913',
+                  },
+                  title: 'Offline Payment',
+                  headerTitleAlign: 'center',
+                  }}  />
+                <Stack.Screen name='scanner'  options={{ 
+                   headerStyle: {
+                    backgroundColor: '#ff9913',
+                  },
+                  title: 'Start Scanning',
+                  headerTitleAlign: 'center',
+                  }}  />
+                  
+                <Stack.Screen name='confirmdetails'  options={{ 
+                   headerStyle: {
+                    backgroundColor: '#ff9913',
+                  },
+                  title: 'Confirm Transaction',
+                  headerTitleAlign: 'center',
+                  }}  />
             </Stack>
             {
                 showmodal && (
