@@ -6,7 +6,9 @@ const ReUseableStyles = () => {
 
   return {
     background : currentMode === 'light' ? 'bg-[#ffffff]' : 'bg-[#0e1a32]',
-    text: currentMode === 'dark' ? 'text-[#ffffff]' : 'text-gray-800'
+    text: currentMode === 'dark' ? 'text-[#ffffff]' : 'text-gray-800',
+    grayText:  currentMode === 'dark' ? 'text-gray-400' : 'text-gray-600',
+    
   }
 };
 

@@ -30,6 +30,7 @@ const App = () => {
                   },
                   title: 'Start Scanning',
                   headerTitleAlign: 'center',
+                  
                   }}  />
                   
                 <Stack.Screen name='confirmdetails'  options={{ 
@@ -37,6 +38,22 @@ const App = () => {
                     backgroundColor: '#ff9913',
                   },
                   title: 'Confirm Transaction',
+                  headerTitleAlign: 'center',
+                  }}  />
+                  
+                <Stack.Screen name='confirmpayment'  options={{ 
+                   headerStyle: {
+                    backgroundColor: '#ff9913',
+                  },
+                  title: 'Transaction Pin',
+                  headerTitleAlign: 'center',
+                  }}  />
+
+                <Stack.Screen name='success'  options={{ 
+                   headerStyle: {
+                    backgroundColor: '#ff9913',
+                  },
+                  title: '',
                   headerTitleAlign: 'center',
                   }}  />
             </Stack>

@@ -46,38 +46,39 @@ const Payment = () => {
       <Text style={className`font-bold text-lg mb-3 ${getmode.text}`}>Payments</Text>
         {
           paymentItems.map((payment, index) => (
-            <View key={index} style={className`p-4 rounded-xl my-2 ${getmode.background}`}>
-              <View  style={className`flex-row justify-between  items-center`}>
-                <View style={className`flex-row items-center gap-4`}>
-                  <View style={className`p-2 rounded-lg bg-[#fdae44]`}>
-                    {
-                      payment.name === 'Peer-To-Peer Transfer' ? (
-                        <PeerToPeer width={20} height={20} stroke={'white'} />
-                      ) 
-                      : payment.name === 'Transfer To Other Bank' ? (
-                        <BankTransfer width={20} height={20} fill={'white'} />
-                      )
-                      : payment.name === 'Offline Payment' ? (
-                        <Offline width={20} height={20} fill={'white'}/>
-                      )
-                      : payment.name === 'Airtime And Data' ? (
-                        <AirtimeAndData width={20} height={20} fill={'white'} />
-                      )
-                      : (
-                        <Bills  width={20} height={20} fill={'white'} />
-                      )
-                    }
-                    
+            <TouchableOpacity key={index} onPress={() =>handleNavigation(payment.name)}>
+              <View style={className`p-4 rounded-xl my-2 ${getmode.background}`}>
+                <View  style={className`flex-row justify-between  items-center`}>
+                  <View style={className`flex-row items-center gap-4`}>
+                    <View style={className`p-2 rounded-lg bg-[#fdae44]`}>
+                      {
+                        payment.name === 'Peer-To-Peer Transfer' ? (
+                          <PeerToPeer width={20} height={20} stroke={'white'} />
+                        ) 
+                        : payment.name === 'Transfer To Other Bank' ? (
+                          <BankTransfer width={20} height={20} fill={'white'} />
+                        )
+                        : payment.name === 'Offline Payment' ? (
+                          <Offline width={20} height={20} fill={'white'}/>
+                        )
+                        : payment.name === 'Airtime And Data' ? (
+                          <AirtimeAndData width={20} height={20} fill={'white'} />
+                        )
+                        : (
+                          <Bills  width={20} height={20} fill={'white'} />
+                        )
+                      }
+                      
+                    </View>
+                    <Text style={className`text-sm font-bold ${getmode.text}`}>{payment.name}</Text>
                   </View>
-                  <Text style={className`text-sm font-bold ${getmode.text}`}>{payment.name}</Text>
-                </View>
 
-                <TouchableOpacity onPress={() =>handleNavigation(payment.name)}>
-                  <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#fdae44' : 'white'}`} />
-                </TouchableOpacity >
+                
+                    <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#fdae44' : 'white'}`} />
+      
+                </View>
               </View>
-            </View>
-              
+            </TouchableOpacity>
           ))
         }
     </View>

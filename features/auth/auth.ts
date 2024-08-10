@@ -1,7 +1,6 @@
 
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
-import * as api from './authService'
 
 // LOG  {"name":"John Doe","amount":50000,"merchantName":"Merchant XYZ","senderId":"123456","transactionRef":"TXN987654"}
 interface QrcodeDecoded {
@@ -18,6 +17,7 @@ interface authState {
   selectionmodal: boolean;
   processPhoto: boolean;
   imageUrl: string;
+  passcode: string;
   user: any;
   activeTabs: 'home' | 'card' | 'saving' | 'salary' | 'main',
   status: 'idle' | 'loading' | 'success' | 'error',
@@ -33,6 +33,7 @@ const initialState: authState = {
   showmodal: false,
   selectionmodal: false,
   imageUrl: '',
+  passcode: '',
   user: {},
   activeTabs: 'home',
   status: 'idle',
@@ -74,6 +75,9 @@ const authSlice = createSlice({
     saveImageCaptured: (state, action: PayloadAction<string>) => {
       state.imageUrl = action.payload;
     },
+    setPasscode: (state, action: PayloadAction<string>) => {
+      state.passcode = action.payload;
+    },
   
     setProcessPhoto: (state, action: PayloadAction<boolean>) => {
       state.processPhoto = action.payload;
@@ -98,5 +102,5 @@ const authSlice = createSlice({
 
 export const selectUser = (state: RootState) => state.auth;
 
-export const {  setValue, shouldShowModal, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
+export const {  setValue, shouldShowModal, setPasscode, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
 export default authSlice.reducer;

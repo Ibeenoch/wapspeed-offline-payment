@@ -1,5 +1,5 @@
 import { View, Text, useColorScheme, ScrollView, Pressable, Button, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import className from 'twrnc';
 import Eye from '../../assets/icons/eye-icon.svg';
 import EyeOff from '../../assets/icons/eye-off-icon.svg';
@@ -16,12 +16,19 @@ import Bet from '../../assets/icons/gambler-bet-svgrepo-com (1).svg';
 import BetCasino from '../../assets/icons/bet-casino-chip-svgrepo-com (2).svg';
 import ReUseableStyles from '../../utils/reuseableColors';
 import * as Clipboard from 'expo-clipboard';
+import { shouldShowModal } from '../../features/auth/auth';
+import { useAppDispatch } from '../../features/hooks';
 
 
 const Home = () => {
   const [showBalance, setShowBalance] = useState<boolean>(false);
   const currentMode = useColorScheme();
   const getmode = ReUseableStyles();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(shouldShowModal(false));
+}, [])
 
   const toggleShowBalance = () => {
     setShowBalance(prev => !prev)

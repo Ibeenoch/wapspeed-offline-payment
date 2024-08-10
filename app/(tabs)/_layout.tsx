@@ -91,7 +91,7 @@ const  Tablayout = () => {
                     style={{ height: 24}}
                     maskElement={<Text style={className`text-lg`}>SPEED</Text>}
                     >
-                    <LinearGradient colors={[ '#fdae44', '#FFFFE0', 'yellow', 'yellow' ]} start={{ x:1, y: 0}}
+                    <LinearGradient colors={[   '#FFA500', '#808000','yellow', 'yellow', 'yellow' ]} start={{ x:1, y: 2}}
                     end={{ x:0, y:0.33}}
                     style={{ flex: 1 }}
                     >
@@ -99,6 +99,8 @@ const  Tablayout = () => {
                     </LinearGradient>
                     </MaskedView>
                   </View>
+
+                
                </View>
             )
           },
@@ -123,7 +125,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'index' ? '#ff9913' : '#000'}` : `${activeTabs === 'index' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'index' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'index' ? '#ff9913' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -164,7 +166,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'payment' ? '#ff9913' : '#000'}` : `${activeTabs === 'payment' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'payment' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'payment' ? '#ff9913' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -191,7 +193,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'collections' ? '#ff9913' : '#000'}` : `${activeTabs === 'collections' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'collections' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'collections' ? '#ff9913' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -218,7 +220,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'settings' ? '#ff9913' : '#000'}` : `${activeTabs === 'settings' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'settings' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'settings' ? '#ff9913' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
