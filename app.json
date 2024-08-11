@@ -36,7 +36,8 @@
           "microphonePermission": "Allow WaspSpeed to access your microphone",
           "recordAudioAndriod": true
         }
-      ]
+      ],
+      "expo-build-properties"
     ],
     "extra": {
       "router": {
