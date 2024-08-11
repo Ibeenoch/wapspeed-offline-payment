@@ -179,6 +179,16 @@ const  Tablayout = () => {
         }} />
         <Tabs.Screen name='collections'  options={{
           title: 'Collections',
+          headerTitle: 'Collections',
+          headerLeft: () => {
+            return (
+              <TouchableOpacity onPress={() => router.back()}>
+                <View style={className`pl-2 flex-row items-center gap-2`}>
+                  <ArrowBack width={30} height={30}  />
+                </View>
+              </TouchableOpacity>
+            )
+          },
           tabBarIcon: () => {
             return  <View  style={className`flex-row justify-center items-center`}>
                       {
@@ -206,6 +216,18 @@ const  Tablayout = () => {
         }} />
         <Tabs.Screen name='settings'  options={{
           title: 'Settings',
+          headerTitle: 'Settings',
+          headerTitleAlign: 'center',
+          headerLeft: () => {
+            return (
+              <TouchableOpacity onPress={() => router.back()}>
+                <View style={className`pl-2 flex-row items-center gap-2`}>
+                  <ArrowBack width={30} height={30}  />
+                </View>
+              </TouchableOpacity>
+            )
+          },
+        
           tabBarIcon: () => {
             return  <View style={className`flex-row justify-center items-center`}>
                      {

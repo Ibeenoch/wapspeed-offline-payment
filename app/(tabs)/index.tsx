@@ -93,7 +93,7 @@ const Home = () => {
       
         <View style={className` ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} h-full flex-1 border-t-[#ff6e00] `}>
           <View style={className`flex-1 bg-[#ff9913]  h-60 w-full absolute top-0 rounded-br-3xl rounded-bl-3xl p-1`}></View>
-             <ScrollView style={className`px-4 pt-4 mb-14`}>
+             <ScrollView style={className`px-4 pt-4 `}>
               <View style={className` flex-row items-center justify-between px-4`}>
 
                 <View style={className` `}>
@@ -144,7 +144,8 @@ const Home = () => {
 
                 </View>
               </View>
-
+                
+              <View style={className`pb-32`}>
                 {
                   transactions.map((transaction, index) => (
                     <View key={index} style={className`p-4 flex-row items-center justify-between border-b border-b-gray-200 ${getmode.background}`}>
@@ -193,6 +194,7 @@ const Home = () => {
                 </View>
                   ))
                 }
+              </View>
 
              </ScrollView>
         </View>
