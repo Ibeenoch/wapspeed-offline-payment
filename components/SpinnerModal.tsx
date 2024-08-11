@@ -1,22 +1,30 @@
-import { View, Text, StyleSheet, ActivityIndicator, useColorScheme } from 'react-native'
+import { View, StyleSheet, ActivityIndicator, useColorScheme, Text } from 'react-native'
 import React from 'react'
 import { BlurView } from 'expo-blur';
 import className from 'twrnc';
+import WaspeedWhite from '../assets/icons/warpspeed-logo-white.svg';
+import WaspeedOrange from '../assets/icons/warpspeed-logo-orange.svg';
 
 const SpinnerModal = () => {
     const currentMode = useColorScheme();
   return (
     <BlurView style={{ zIndex: 2, width: '100%', height: '100%', position: 'absolute'}} experimentalBlurMethod='dimezisBlurView' tint='regular' intensity={20}>
-    {/* <View style={styles.modalContainer}> */}
     <View style={className`flex-1 flex-row justify-center items-center`}>
       {/* Background circular tube */}
       <View style={styles.tubeContainer}>
         <View style={styles.tube} />
       </View>
-      {/* ActivityIndicator  */}
-      
-      
-      <ActivityIndicator size={72}  color={currentMode === 'light' ? '#ffffff' : '#ffd75b'  } style={[styles.spinner, className``]} />
+      <View >
+        {
+          currentMode === 'light' ? (
+            <WaspeedWhite width={80} height={80} />
+          ) : (
+            <WaspeedOrange width={80} height={80} />
+          )
+        }
+      </View>
+    
+      <ActivityIndicator size={92}  color={currentMode === 'light' ? '#ffffff' : '#ff9913'  } style={[styles.spinner, className``]} />
     </View>
   </BlurView>
   )
@@ -39,10 +47,10 @@ const styles = StyleSheet.create({
         // backgroundColor: 'rgba(0, 0, 0, 0.80)', 
     },
     tube: {
-      width: '60%',
-      height: '60%',
+      width: '75%',
+      height: '75%',
       borderRadius: 50, // Make it circular
-      borderWidth: 6, // Width of the tube
+      borderWidth: 7, // Width of the tube
       borderColor: '#7f7f7f', // Light gray color for the tube
       position: 'absolute',
     },

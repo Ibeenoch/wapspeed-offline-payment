@@ -103,6 +103,7 @@ const Passcode = () => {
               }
             }}
             cursorColor={`#ff9913`}
+            autoComplete='off'
             // editable={false}
             showSoftInputOnFocus={false}
             // onFocus={() => handleFocus(index)}
@@ -117,8 +118,8 @@ const Passcode = () => {
         <View style={className`mx-4 my-6 p-4 rounded-xl ${currentMode === 'light' ? '' : ''}`}>
         <View style={className`flex-row flex-wrap w-full justify-between gap-2 mb-2`}>
           {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map(num => (
-              <TouchableOpacity onPress={() => updateNum(num)} style={className`rounded-full p-6 w-[27%] ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#1a263e]'}`} >
-                <View key={num} >
+              <TouchableOpacity key={num} onPress={() => updateNum(num)} style={className`rounded-full p-6 w-[27%] ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#1a263e]'}`} >
+                <View >
                     <Text style={className`font-bold text-2xl text-center ${currentMode === 'light' ? 'text-black' : 'text-white bg-[#1a263e]'}`}>{num}</Text>
                 </View>
               </TouchableOpacity>

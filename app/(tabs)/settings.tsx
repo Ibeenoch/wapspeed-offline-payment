@@ -55,6 +55,9 @@ const Settings = () => {
                       : setting.name === 'Language' ? (
                         <Language width={18} height={18} />
                       ) 
+                      : setting.name === 'Limits' ? (
+                        <Limits width={18} height={18} />
+                      ) 
                       : (
                         <Notification width={18} height={18} />
                       )

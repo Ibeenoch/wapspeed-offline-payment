@@ -97,7 +97,7 @@ const Home = () => {
               <View style={className` flex-row items-center justify-between px-4`}>
 
                 <View style={className` `}>
-                  <Text style={className`text-xl font-bold text-gray-600`} >Hello,</Text>
+                  <Text style={className`text-xl font-bold text-[#001a71]`} >Hello,</Text>
                   <Text style={className`text-3xl font-bold text-white`} >Adebisi!</Text>
                 </View>
 
@@ -162,7 +162,7 @@ const Home = () => {
                           <Deposit width={18} height={18} />
                         )
                         : transaction.type === 'Betting' ? (
-                          <Bet width={18} height={18} />
+                          <BetCasino width={18} height={18} />
                         )
                         : transaction.type === 'Investment' ? (
                           <InvestMent width={18} height={18} />
@@ -178,7 +178,7 @@ const Home = () => {
                     </View>
                     <View>
                       <Text style={className`text-sm font-bold ${getmode.text}`}>{transaction.type}</Text>
-                      <Text style={className`text-xs text-gray-600`}>{transaction.date}</Text>
+                      <Text style={className`text-xs ${getmode.grayText}`}>{transaction.date}</Text>
                     </View>
                   </View>
 

@@ -19,7 +19,7 @@ const Success = () => {
 
   return (
         <View style={className`flex-1 px-4 ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}`}>
-            <View style={className`flex-row justify-center items-center h-[100%] gap-3 px-8`}>
+            <View style={className`flex-row justify-center items-center h-[90%] gap-3 px-8`}>
                 <Wait width={30} height={30} fill={`${currentMode === 'light' ? 'black': 'white'}`} /> 
                 <Text style={className`${getmode.text} text-sm w-[250px] `}>Payment Processing, You will receive an SMS notification upon completion.</Text>
             </View>

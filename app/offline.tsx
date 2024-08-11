@@ -21,9 +21,8 @@ const Offline = () => {
 
   return (
     <View style={className` ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} p-4 h-full flex-1 border-t-[#ff6e00] `}>
-    <Text style={className`font-bold text-lg mb-3 ${getmode.text}`}>Offline Payments</Text>
 
-        <View style={className`flex-col justify-center items-center gap-2 h-[80%]`}>
+        <View style={className`flex-col justify-center items-center gap-2 h-[100%]`}>
             <Text style={className`text-xl font-bold text-center ${getmode.text}`}>Click to</Text>
             <TouchableOpacity onPress={handleOfflinePayment} style={className` bg-opacity-50 bg-[#FFB84D] py-1 px-2 rounded-xl flex-row items-center gap-2`} >
                 <ScanQR width={20} height={20} />

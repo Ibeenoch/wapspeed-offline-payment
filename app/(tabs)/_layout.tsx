@@ -180,6 +180,7 @@ const  Tablayout = () => {
         <Tabs.Screen name='collections'  options={{
           title: 'Collections',
           headerTitle: 'Collections',
+          headerTitleAlign: 'center',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => router.back()}>

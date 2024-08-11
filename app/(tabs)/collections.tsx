@@ -1,4 +1,4 @@
-import { View, Text, useColorScheme, ScrollView } from 'react-native'
+import { View, Text, useColorScheme, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import className from 'twrnc';
 import { PieChart } from 'react-native-gifted-charts'
@@ -186,11 +186,13 @@ const Collections = () => {
         </View>
 
         <Text style={className`text-sm font-bold pl-2 mt-3 mb-1 ${getmode.text}`}>Spendings</Text>
-        <ScrollView horizontal={true} style={className`pb-2 border-b border-b-gray-400 border-dashed border-opacity-50`} >
+        <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#001a71]' :  'border-b-white'} border-dashed border-opacity-30`} >
         <View style={className`flex-row  gap-2 px-2 items-center`}>
-          <View style={className`border border-dashed ${currentMode === 'light' ? 'border-[#001a71]' :  'border-white'} border-opacity-50 rounded-xl px-3 py-8 flex-row justify-center items-center`}>
-            <Text style={className`font-bold text-lg ${getmode.text} `}>+</Text>
-          </View>
+          <TouchableOpacity>
+            <View style={className`border border-dashed ${currentMode === 'light' ? 'border-[#001a71]' :  'border-white'} border-opacity-50 rounded-xl px-3 py-8 flex-row justify-center items-center`}>
+              <Text style={className`font-bold text-lg ${getmode.text} `}>+</Text>
+            </View>
+          </TouchableOpacity>
 
           <View style={className`flex-row gap-2 items-center`}>
               {
@@ -198,7 +200,9 @@ const Collections = () => {
                   <View key={index} style={className`p-2 w-18 rounded-xl flex-col gap-4.9 ${item.backgroundColor}`}>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.type} </Text>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.amount} </Text>
-                    <Text style={className`text-white font-bold text-left p-1 bg-gray-400 bg-opacity-10 rounded-full w-7 text-[9px]`}>{item.percent} </Text>
+                    <View style={className`py-1 pl-1 bg-gray-400 bg-opacity-30 rounded-full w-7 flex-row justify-center items-center`}>
+                      <Text style={className`text-white font-bold text-center text-[9px]`}>{item.percent} </Text>
+                    </View>
                   </View>
                 ))
               }
@@ -207,7 +211,7 @@ const Collections = () => {
         </ScrollView>
 
         <Text style={className`text-sm pl-2 font-bold  ${getmode.text}`}>Income</Text>
-        <ScrollView horizontal={true} style={className` py-2 border-b border-b-gray-400 border-dashed border-opacity-50`} >
+        <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#001a71]' :  'border-b-white'} border-dashed border-opacity-30`} >
           <View style={className`flex-row gap-2 items-center px-2`}>
         {
           incomeData.map((income, index) => (
@@ -243,12 +247,12 @@ const Collections = () => {
 
         <Text style={className`text-sm pl-2 pt-2 font-bold  ${getmode.text}`}>August Spending</Text>
         <ScrollView  style={className`w-full py-2 `} >
-          <View style={className`flex-col mb-12 pb-12`}>
+          <View style={className`flex-col mb-12 pb-12 px-4`}>
               {
                 monthlySpendings.map((monthly, index) => (
-                  <View key={index} style={className`flex-row my-2 justify-between items-center px-2`}>
+                  <View key={index} style={className`flex-row rounded-xl py-2 my-1 ${currentMode === 'light' ? 'bg-white' : 'bg-[#0e1a32]'} justify-between items-center px-2`}>
                   <View key={index} style={className`flex-row gap-2 items-center px-2`}>
-                    <View style={className`p-2 `}>
+                    <View style={className`py-2 `}>
                         {
                           monthly.title === 'AirBnB Rent' ? (
                             <AirBnb width={30} height={30}  />
@@ -264,13 +268,13 @@ const Collections = () => {
                           )
                         }
                     </View>
-                    <View>
+                    <View >
                       <Text style={className`font-bold text-left text-xs ${getmode.text}`}>{monthly.title} </Text>
                       <Text style={className`font-bold text-left text-[9px] ${getmode.grayText}`}>{monthly.date} </Text>
                     </View>
                   </View>
 
-                  <Text style={className`text-xs ${getmode.text} font-bold`}>{monthly.amount}</Text>
+                  <Text style={className`text-xs ${getmode.text} pr-3 font-bold`}>{monthly.amount}</Text>
                   </View>
                 ))
               }
