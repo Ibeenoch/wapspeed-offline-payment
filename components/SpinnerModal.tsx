@@ -16,7 +16,7 @@ const SpinnerModal = () => {
       </View>
      
     
-      <ActivityIndicator size={92}  color={currentMode === 'light' ? '#ffffff' : '#ff9913'  } style={[styles.spinner, className``]} />
+      <ActivityIndicator size={92}  color={currentMode === 'light' ? '#ffffff' : '#f96d0e'  } style={[styles.spinner, className``]} />
     </View>
   </BlurView>
   )
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
       width: '75%',
       height: '75%',
       borderRadius: 50, // Make it circular
-      borderWidth: 7, // Width of the tube
+      borderWidth: 6.5, // Width of the tube
       borderColor: '#f7f7f7', // Light gray color for the tube
       position: 'absolute',
     },

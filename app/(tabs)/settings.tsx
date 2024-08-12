@@ -73,8 +73,8 @@ const Settings = () => {
       </View>
 
       <TouchableOpacity>
-        <View style={className`flex-row justify-center items-center mt-8 py-1 mx-auto w-40 bg-[#c21807] bg-opacity-30  rounded-xl`}>
-          <Text style={className`font-bold text-[#c21807] text-lg`}>Sign Out </Text>
+        <View style={className`flex-row justify-center items-center mt-8 py-1 mx-auto w-40 bg-[#f96d0e] bg-opacity-30  rounded-xl`}>
+          <Text style={className`font-bold text-[#f96d0e] text-lg`}>Sign Out </Text>
           <ArrowUpRight width={20} height={20} />
         </View>
       </TouchableOpacity>

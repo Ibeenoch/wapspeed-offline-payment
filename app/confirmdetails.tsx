@@ -42,7 +42,7 @@ const Confirmdetails = () => {
         <Text style={className`text-2xl leading-6 text-center font-bold ${getmode.text}`}>Confirm Transaction</Text>
       </View>
 
-      <View style={className`flex-col justify-center items-center  border-b border-b-orange-400  border-dotted my-2 py-2`}>
+      <View style={className`flex-col justify-center items-center  border-b border-b-[#f96d0e]  border-dotted my-2 py-2`}>
         <View style={className`flex-row items-center gap-1`}>
             <TextInput cursorColor={'#f96d0e'} style={className`text-center text-3xl text-[#f96d0e] font-bold`} maxLength={12} keyboardType='number-pad' value={amount} onChangeText={handleAmount} />
             <Edit width={15} height={15} stroke={'#f96d0e'} />

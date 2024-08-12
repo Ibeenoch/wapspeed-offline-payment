@@ -186,10 +186,10 @@ const Collections = () => {
         </View>
 
         <Text style={className`text-sm font-bold pl-2 mt-3 mb-1 ${getmode.text}`}>Spendings</Text>
-        <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#000]' :  'border-b-white'} border-dashed border-opacity-30`} >
-        <View style={className`flex-row  gap-2 px-2 items-center`}>
+        <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#f96d0e]' :  'border-b-[#f96d0e]'} border-dashed border-opacity-30`} >
+        <View style={className`flex-row gap-2 px-2 items-center`}>
           <TouchableOpacity>
-            <View style={className`border border-dashed bg-[#f96d0e] bg-opacity-30 ${currentMode === 'light' ? 'border-[#f96d0e]' :  'border-[#f96d0e]'} border-opacity-50 rounded-xl px-3 py-8 flex-row justify-center items-center`}>
+            <View style={className`border border-dashed bg-[#f96d0e] bg-opacity-30 ${currentMode === 'light' ? 'border-[#f96d0e]' :  'border-[#f96d0e]'} border-opacity-50 rounded-xl px-3 py-9 flex-row justify-center items-center`}>
               <Text style={className`font-bold text-lg text-[#f96d0e] `}>+</Text>
             </View>
           </TouchableOpacity>
@@ -197,7 +197,7 @@ const Collections = () => {
           <View style={className`flex-row gap-2 items-center`}>
               {
                 budgets.map((item, index) => (
-                  <View key={index} style={className`p-2 w-18 rounded-xl flex-col gap-4.9 ${item.backgroundColor}`}>
+                  <View key={index} style={className`p-2 w-18 rounded-xl flex-col gap-5 ${item.backgroundColor}`}>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.type} </Text>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.amount} </Text>
                     <View style={className`py-1 pl-1 bg-gray-400 bg-opacity-10 rounded-full w-7 flex-row justify-center items-center`}>
@@ -211,7 +211,7 @@ const Collections = () => {
         </ScrollView>
 
         <Text style={className`text-sm pl-2 font-bold  ${getmode.text}`}>Income</Text>
-        <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#000]' :  'border-b-white'} border-dashed border-opacity-30`} >
+        <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#f96d0e]' :  'border-b-[#f96d0e]'} border-dashed border-opacity-30`} >
           <View style={className`flex-row gap-2 items-center px-2`}>
         {
           incomeData.map((income, index) => (
