@@ -50,7 +50,7 @@ const Payment = () => {
               <View style={className`p-4 rounded-xl my-2 ${getmode.background}`}>
                 <View  style={className`flex-row justify-between  items-center`}>
                   <View style={className`flex-row items-center gap-4`}>
-                    <View style={className`p-2 rounded-lg bg-[#fdae44]`}>
+                    <View style={className`p-2 rounded-lg bg-[#f96d0e]`}>
                       {
                         payment.name === 'Peer-To-Peer Transfer' ? (
                           <PeerToPeer width={20} height={20} stroke={'white'} />
@@ -74,7 +74,7 @@ const Payment = () => {
                   </View>
 
                 
-                    <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#fdae44' : 'white'}`} />
+                    <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#f96d0e' : 'white'}`} />
       
                 </View>
               </View>

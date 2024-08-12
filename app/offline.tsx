@@ -26,7 +26,7 @@ const Offline = () => {
             <Text style={className`text-xl font-bold text-center ${getmode.text}`}>Click to</Text>
             <TouchableOpacity onPress={handleOfflinePayment} style={className` bg-opacity-50 bg-[#FFB84D] py-1 px-2 rounded-xl flex-row items-center gap-2`} >
                 <ScanQR width={20} height={20} />
-                <Text style={className`text-lg text-center text-orange-500 font-bold`}>Scan The QRcode</Text>
+                <Text style={className`text-lg text-center text-[#f96d0e] font-bold`}>Scan The QRcode</Text>
             </TouchableOpacity> 
         </View>
         

@@ -57,27 +57,27 @@ const Collections = () => {
 
   const renderLegendComponent = () => {
     return (
-      <View style={className` bg-[#ff9913] pb-4`}>
+      <View style={className` bg-[#f96d0e] pb-4`}>
         <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 10}}>
           <View style={{ flexDirection: 'row', alignItems: 'center', width: 120, marginRight: 20}}>
             {renderDot('#006dff')}
-            <Text style={{ fontWeight: 500, color: '#001a71'}}>Expense: 47%</Text>
+            <Text style={{ fontWeight: 500, color: '#000'}}>Expense: 47%</Text>
           </View>
 
           <View style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
             {renderDot('#8f80f3')}
-            <Text  style={{ fontWeight: 500, color: '#001a71'}}>Savings:  16%</Text>
+            <Text  style={{ fontWeight: 500, color: '#000'}}>Savings:  16%</Text>
           </View>
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'center'}}>
           <View style={{ flexDirection: 'row', alignItems: 'center', width: 120, marginRight: 20 }}>
             {renderDot('#3be9de')}
-            <Text  style={{ fontWeight: 500, color: '#001a71'}}>Investment:  40%</Text>
+            <Text  style={{ fontWeight: 500, color: '#000'}}>Investment:  40%</Text>
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
             {renderDot('#ff7f97')}
-            <Text  style={{ fontWeight: 500, color: '#001a71'}}>Others:  3%</Text>
+            <Text  style={{ fontWeight: 500, color: '#000'}}>Others:  3%</Text>
           </View>
         </View>
       </View>
@@ -163,7 +163,7 @@ const Collections = () => {
     <ScrollView>
       <View style={className`  ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}`}>
         <View style={className` `}>
-          <View style={className`w-full flex-row justify-center bg-[#ff9913]  h-50`}>
+          <View style={className`w-full flex-row justify-center bg-[#f96d0e]  h-50`}>
             <PieChart
             data={pieChartData}
             donut
@@ -186,11 +186,11 @@ const Collections = () => {
         </View>
 
         <Text style={className`text-sm font-bold pl-2 mt-3 mb-1 ${getmode.text}`}>Spendings</Text>
-        <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#001a71]' :  'border-b-white'} border-dashed border-opacity-30`} >
+        <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#000]' :  'border-b-white'} border-dashed border-opacity-30`} >
         <View style={className`flex-row  gap-2 px-2 items-center`}>
           <TouchableOpacity>
-            <View style={className`border border-dashed ${currentMode === 'light' ? 'border-[#001a71]' :  'border-white'} border-opacity-50 rounded-xl px-3 py-8 flex-row justify-center items-center`}>
-              <Text style={className`font-bold text-lg ${getmode.text} `}>+</Text>
+            <View style={className`border border-dashed bg-[#f96d0e] bg-opacity-30 ${currentMode === 'light' ? 'border-[#f96d0e]' :  'border-[#f96d0e]'} border-opacity-50 rounded-xl px-3 py-8 flex-row justify-center items-center`}>
+              <Text style={className`font-bold text-lg text-[#f96d0e] `}>+</Text>
             </View>
           </TouchableOpacity>
 
@@ -200,7 +200,7 @@ const Collections = () => {
                   <View key={index} style={className`p-2 w-18 rounded-xl flex-col gap-4.9 ${item.backgroundColor}`}>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.type} </Text>
                     <Text style={className`text-white font-bold text-left text-[9px]`}>{item.amount} </Text>
-                    <View style={className`py-1 pl-1 bg-gray-400 bg-opacity-30 rounded-full w-7 flex-row justify-center items-center`}>
+                    <View style={className`py-1 pl-1 bg-gray-400 bg-opacity-10 rounded-full w-7 flex-row justify-center items-center`}>
                       <Text style={className`text-white font-bold text-center text-[9px]`}>{item.percent} </Text>
                     </View>
                   </View>
@@ -211,11 +211,11 @@ const Collections = () => {
         </ScrollView>
 
         <Text style={className`text-sm pl-2 font-bold  ${getmode.text}`}>Income</Text>
-        <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#001a71]' :  'border-b-white'} border-dashed border-opacity-30`} >
+        <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#000]' :  'border-b-white'} border-dashed border-opacity-30`} >
           <View style={className`flex-row gap-2 items-center px-2`}>
         {
           incomeData.map((income, index) => (
-            <View key={index} style={className`${currentMode === 'light' ? 'bg-[#001a71]' : 'bg-[#ff9913]'} w-23 pb-2 rounded-xl p-2`}>
+            <View key={index} style={className`${currentMode === 'light' ? 'bg-[#f96d0e]' : 'bg-[#f96d0e]'} w-23 pb-2 rounded-xl p-2`}>
                 <View style={className`flex-row justify-between `}>
                   <View style={className`flex-row justify-between items-center p-1 border border-white border-opacity-40 rounded-full`}>
                     {

@@ -24,7 +24,7 @@ const Success = () => {
                 <Text style={className`${getmode.text} text-sm w-[250px] `}>Payment Processing, You will receive an SMS notification upon completion.</Text>
             </View>
 
-            <TouchableOpacity onPress={() => router.push('(tabs)/')} style={className`absolute bottom-5  ml-4 w-full rounded-xl bg-[#ff9913]`}>
+            <TouchableOpacity onPress={() => router.push('(tabs)/')} style={className`absolute bottom-5  ml-4 w-full rounded-xl bg-[#f96d0e]`}>
           <View style={className`w-full px-6 py-4  flex-row justify-center items-center`}>
             <Text style={className`text-sm font-bold text-white`}>Continue To Dashboard</Text>
           </View>

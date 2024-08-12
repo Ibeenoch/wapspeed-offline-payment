@@ -14,15 +14,7 @@ const SpinnerModal = () => {
       <View style={styles.tubeContainer}>
         <View style={styles.tube} />
       </View>
-      <View >
-        {
-          currentMode === 'light' ? (
-            <WaspeedWhite width={80} height={80} />
-          ) : (
-            <WaspeedOrange width={80} height={80} />
-          )
-        }
-      </View>
+     
     
       <ActivityIndicator size={92}  color={currentMode === 'light' ? '#ffffff' : '#ff9913'  } style={[styles.spinner, className``]} />
     </View>
@@ -51,7 +43,7 @@ const styles = StyleSheet.create({
       height: '75%',
       borderRadius: 50, // Make it circular
       borderWidth: 7, // Width of the tube
-      borderColor: '#7f7f7f', // Light gray color for the tube
+      borderColor: '#f7f7f7', // Light gray color for the tube
       position: 'absolute',
     },
     spinner: {

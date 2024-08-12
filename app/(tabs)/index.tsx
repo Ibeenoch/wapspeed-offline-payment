@@ -92,12 +92,12 @@ const Home = () => {
   return (
       
         <View style={className` ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} h-full flex-1 border-t-[#ff6e00] `}>
-          <View style={className`flex-1 bg-[#ff9913]  h-60 w-full absolute top-0 rounded-br-3xl rounded-bl-3xl p-1`}></View>
+          <View style={className`flex-1 bg-[#f96d0e]  h-60 w-full absolute top-0 rounded-br-3xl rounded-bl-3xl p-1`}></View>
              <ScrollView style={className`px-4 pt-4 `}>
               <View style={className` flex-row items-center justify-between px-4`}>
 
                 <View style={className` `}>
-                  <Text style={className`text-xl font-bold text-[#001a71]`} >Hello,</Text>
+                  <Text style={className`text-xl font-bold text-[#000]`} >Hello,</Text>
                   <Text style={className`text-3xl font-bold text-white`} >Adebisi!</Text>
                 </View>
 
@@ -109,11 +109,11 @@ const Home = () => {
                 </View>
               </View>
 
-              <View style={className`p-4 rounded-xl my-3 bg-[#fdae44]`}>
+              <View style={className`p-4 rounded-xl my-3 bg-[#f9780e]`}>
                   <Text style={className`text-white font-bold text-sm italic`}>Tier 3 Verification in progress</Text>
               </View>
 
-              <View style={className`p-4 rounded-xl my-3 bg-[#fdae44] flex-row justify-between items-center gap-4`}>
+              <View style={className`p-4 rounded-xl my-3 bg-[#f9780e] flex-row justify-between items-center gap-4`}>
                   {
                     showBalance ? (
                   <Pressable onPress={toggleShowBalance}>
@@ -150,7 +150,7 @@ const Home = () => {
                   transactions.map((transaction, index) => (
                     <View key={index} style={className`p-4 flex-row items-center justify-between border-b border-b-gray-200 ${getmode.background}`}>
                   <View style={className`flex-row items-center gap-2`}>
-                    <View style={className`flex-row rounded-full p-2 bg-[#fdae44] justify-center items-center`}>
+                    <View style={className`flex-row rounded-full p-2 bg-[#f96d0e] justify-center items-center`}>
                       {
                         transaction.type === 'Withdrawal' ? (
                           <WithDrawal width={18} height={18} />

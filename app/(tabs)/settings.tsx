@@ -35,7 +35,7 @@ const Settings = () => {
             <TouchableOpacity key={index}>
               <View  style={className`flex-row p-2 ${getmode.background} rounded-xl mb-2 items-center justify-between`}>
                 <View style={className`flex-row gap-2 items-center`}>
-                  <View style={className`p-2 bg-[#ff9913] rounded-full bg-opacity-40`}>
+                  <View style={className`p-2 bg-[#f96d0e] rounded-full `}>
                     {
                       setting.name === 'Security' ? (
                         <Security width={18} height={18} />
@@ -65,7 +65,7 @@ const Settings = () => {
                   </View>
                   <Text style={className`font-bold text-sm ${getmode.text} `}>{setting.name} </Text>
                 </View>
-                <ArrowForward width={18} height={18} stroke={'orange'} />
+                <ArrowForward width={18} height={18} stroke={'#f96d0e'} />
               </View>
             </TouchableOpacity>
           ))

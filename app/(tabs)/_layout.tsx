@@ -66,25 +66,27 @@ const  Tablayout = () => {
           borderTopWidth: 0,
           backgroundColor:  currentMode === 'dark' ?  '#0e1a32' : '#f7f7f7',
           display: 'flex',
-          alignItems: 'center'
+          alignItems: 'center',
         },
 
         
       tabBarActiveTintColor: currentMode === 'light' ? `#0261ef` : `#ff6e00`,
       tabBarInactiveTintColor: currentMode === 'light' ? `#9eacc7` : `#b9c1ce`,
       headerStyle: {
-        backgroundColor: '#ff9913',
-        borderColor: '#ff9913'
+        backgroundColor: '#f96d0e',
+        borderColor: '#f96d0e',
       }
       }}
       >
         <Tabs.Screen name='index'  options={{
           title: 'Home',
           headerTitle: '',
+          headerTintColor: '#000',
           headerLeft: () => {
             return (
-               <View style={className`flex-row items-center`}>
-                <WarpSpeed width={80} height={80} />
+               <View style={className`p-4`}>
+                <Image source={require('../../assets/icons/waspspeed.png')} style={className`w-40 h-10 rounded-xl`} />
+                {/* <WarpSpeed width={80} height={80} />
                   <View style={className`flex-row -ml-4`}>
                     <Text style={className`text-black font-bold text-lg`}>WARP</Text>
                     <MaskedView
@@ -98,7 +100,7 @@ const  Tablayout = () => {
                       <Text style={[className`text-lg opacity-0`, { fontWeight: 1500 }]}>SPEED</Text>
                     </LinearGradient>
                     </MaskedView>
-                  </View>
+                  </View> */}
 
                 
                </View>
@@ -125,7 +127,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'index' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'index' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'index' ? '#f96d0e' : '#000'}` : `${activeTabs === 'index' ? '#f96d0e' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -141,6 +143,7 @@ const  Tablayout = () => {
           headerShown: true,
           headerTitle: 'Payment',
           headerTitleAlign: 'center',
+          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <View style={className`pl-4`}>
@@ -166,7 +169,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'payment' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'payment' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'payment' ? '#f96d0e' : '#000'}` : `${activeTabs === 'payment' ? '#f96d0e' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -181,6 +184,7 @@ const  Tablayout = () => {
           title: 'Collections',
           headerTitle: 'Collections',
           headerTitleAlign: 'center',
+          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => router.back()}>
@@ -204,7 +208,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'collections' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'collections' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'collections' ? '#f96d0e' : '#000'}` : `${activeTabs === 'collections' ? '#f96d0e' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}
@@ -219,6 +223,7 @@ const  Tablayout = () => {
           title: 'Settings',
           headerTitle: 'Settings',
           headerTitleAlign: 'center',
+          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => router.back()}>
@@ -243,7 +248,7 @@ const  Tablayout = () => {
           tabBarLabelStyle: {
             fontSize: 12,
             fontWeight: 800,
-            color: currentMode === 'light' ? `${activeTabs === 'settings' ? '#ff9913' : '#001a71'}` : `${activeTabs === 'settings' ? '#ff9913' : '#fff'}`,
+            color: currentMode === 'light' ? `${activeTabs === 'settings' ? '#f96d0e' : '#000'}` : `${activeTabs === 'settings' ? '#f96d0e' : '#fff'}`,
           },
           tabBarButton: (props) => (
             <Pressable  {...props}

@@ -102,12 +102,12 @@ const Passcode = () => {
                 updateNum(text);
               }
             }}
-            cursorColor={`#ff9913`}
+            cursorColor={`#f96d0e`}
             autoComplete='off'
             // editable={false}
             showSoftInputOnFocus={false}
             // onFocus={() => handleFocus(index)}
-            style={className`p-2 rounded-md font-bold text-lg text-center ${ currentIndex === index ? `${currentMode === 'light' ? 'text-black bg-white border border-[#ff9913]' : 'border border-[#ff9913] text-white bg-[#0e1a32]'} ` : `${currentMode === 'light' ? 'text-black bg-[#f4f5f9]' : 'text-white bg-[#333e52]'} ` }  `}
+            style={className`p-2 rounded-md font-bold text-lg text-center ${ currentIndex === index ? `${currentMode === 'light' ? 'text-black bg-white border border-[#f96d0e]' : 'border border-[#f96d0e] text-white bg-[#0e1a32]'} ` : `${currentMode === 'light' ? 'text-black bg-[#f4f5f9]' : 'text-white bg-[#333e52]'} ` }  `}
             maxLength={1} // Ensure only one character
           />
         ))}
@@ -151,7 +151,7 @@ const Passcode = () => {
                </View>
                 </TouchableOpacity>              
 
-                <TouchableOpacity onPress={handleNext} style={className`rounded-full flex-row justify-center p-6 w-[27%]  ${ currentMode === 'light' ? `${passcodeReady ? 'bg-[#ff9913]' : 'bg-[#ffb84d] bg-opacity-20'   } ` : `${passcodeReady ? 'bg-[#ff9913]' : 'bg-[#ffb84d] bg-opacity-10'  }`  }` }>
+                <TouchableOpacity onPress={handleNext} style={className`rounded-full flex-row justify-center p-6 w-[27%]  ${ currentMode === 'light' ? `${passcodeReady ? 'bg-[#f96d0e]' : 'bg-[#ffb84d] bg-opacity-20'   } ` : `${passcodeReady ? 'bg-[#f96d0e]' : 'bg-[#ffb84d] bg-opacity-10'  }`  }` }>
                           <ArrowForward  width={30} height={30} fill={currentMode === 'light' ? 'white' : 'white' } stroke={currentMode === 'light' ? 'white' : 'white' } />
                 </TouchableOpacity> 
               
@@ -160,7 +160,7 @@ const Passcode = () => {
       </View>
 
           <View style={className``}> 
-            <Text style={className`text-center text-xs text-[#ff9913] `}>Forgot passcode?</Text>
+            <Text style={className`text-center text-xs text-[#f96d0e] `}>Forgot passcode?</Text>
           </View>
     </View>
   )
