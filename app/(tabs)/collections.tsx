@@ -57,7 +57,7 @@ const Collections = () => {
 
   const renderLegendComponent = () => {
     return (
-      <View style={className`${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} pb-4`}>
+      <View style={className`${ currentMode === 'light' ? 'bg-[#f7f7f7] border-b-[#f96d0e] border-b border-dashed border-opacity-30' : 'bg-[#000e28] border-b-[#f96d0e] border-b border-dashed border-opacity-30'}  pb-4`}>
         <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 10}}>
           <View style={{ flexDirection: 'row', alignItems: 'center', width: 120, marginRight: 20}}>
             {renderDot('#006dff')}
@@ -163,7 +163,7 @@ const Collections = () => {
     <ScrollView>
       <View style={className`  ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}`}>
         <View style={className` `}>
-          <View style={className`w-full flex-row justify-center ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}  h-50`}>
+          <View style={className`w-full flex-row justify-center  ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}  h-50`}>
             <PieChart
             data={pieChartData}
             donut
@@ -185,7 +185,7 @@ const Collections = () => {
           {renderLegendComponent()}
         </View>
 
-        <Text style={className`text-sm font-bold pl-2 mt-3 mb-1 ${getmode.text}`}>Spendings</Text>
+        <Text style={className`text-sm font-bold pl-2 mt-1 mb-1 ${getmode.text}`}>Spendings</Text>
         <ScrollView horizontal={true} style={className`pb-2 border-b  ${currentMode === 'light' ? 'border-b-[#f96d0e]' :  'border-b-[#f96d0e]'} border-dashed border-opacity-30`} >
         <View style={className`flex-row gap-2 px-2 items-center`}>
           <TouchableOpacity>
@@ -210,7 +210,7 @@ const Collections = () => {
         </View>
         </ScrollView>
 
-        <Text style={className`text-sm pl-2 font-bold  ${getmode.text}`}>Income</Text>
+        <Text style={className`text-sm pl-2 mt-1 font-bold  ${getmode.text}`}>Income</Text>
         <ScrollView horizontal={true} style={className` py-2 border-b ${currentMode === 'light' ? 'border-b-[#f96d0e]' :  'border-b-[#f96d0e]'} border-dashed border-opacity-30`} >
           <View style={className`flex-row gap-2 items-center px-2`}>
         {
