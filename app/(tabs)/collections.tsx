@@ -57,27 +57,27 @@ const Collections = () => {
 
   const renderLegendComponent = () => {
     return (
-      <View style={className` bg-[#f96d0e] pb-4`}>
+      <View style={className`${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} pb-4`}>
         <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 10}}>
           <View style={{ flexDirection: 'row', alignItems: 'center', width: 120, marginRight: 20}}>
             {renderDot('#006dff')}
-            <Text style={{ fontWeight: 500, color: '#000'}}>Expense: 47%</Text>
+            <Text style={{ fontWeight: 500, color: `${ currentMode === 'light' ? '#000' : '#fff'}`}}>Expense: 47%</Text>
           </View>
 
           <View style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
             {renderDot('#8f80f3')}
-            <Text  style={{ fontWeight: 500, color: '#000'}}>Savings:  16%</Text>
+            <Text  style={{ fontWeight: 500, color: `${ currentMode === 'light' ? '#000' : '#fff'}`}}>Savings:  16%</Text>
           </View>
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'center'}}>
           <View style={{ flexDirection: 'row', alignItems: 'center', width: 120, marginRight: 20 }}>
             {renderDot('#3be9de')}
-            <Text  style={{ fontWeight: 500, color: '#000'}}>Investment:  40%</Text>
+            <Text  style={{ fontWeight: 500, color: `${ currentMode === 'light' ? '#000' : '#fff'}`}}>Investment:  40%</Text>
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center', width: 120}}>
             {renderDot('#ff7f97')}
-            <Text  style={{ fontWeight: 500, color: '#000'}}>Others:  3%</Text>
+            <Text  style={{ fontWeight: 500, color: `${ currentMode === 'light' ? '#000' : '#fff'}`}}>Others:  3%</Text>
           </View>
         </View>
       </View>
@@ -163,7 +163,7 @@ const Collections = () => {
     <ScrollView>
       <View style={className`  ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}`}>
         <View style={className` `}>
-          <View style={className`w-full flex-row justify-center bg-[#f96d0e]  h-50`}>
+          <View style={className`w-full flex-row justify-center ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}  h-50`}>
             <PieChart
             data={pieChartData}
             donut

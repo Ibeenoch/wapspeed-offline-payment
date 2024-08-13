@@ -22,6 +22,7 @@ import SettingInactive from '../../assets/icons/setting-icon-inactive.svg';
 import SettingWhite from '../../assets/icons/setting-white-icon.svg';
 import WarpSpeed from '../../assets/icons/warpspeed-logo-white.svg'
 import ArrowBack from '../../assets/icons/arrow-back-icon.svg'
+import ArrowBackWhite from '../../assets/icons/arrow-back-icon-white.svg'
 
 
 
@@ -73,15 +74,16 @@ const  Tablayout = () => {
       tabBarActiveTintColor: currentMode === 'light' ? `#0261ef` : `#ff6e00`,
       tabBarInactiveTintColor: currentMode === 'light' ? `#9eacc7` : `#b9c1ce`,
       headerStyle: {
-        backgroundColor: '#f96d0e',
-        borderColor: '#f96d0e',
-      }
+        // backgroundColor: '#f96d0e',
+        backgroundColor: currentMode === 'light' ? '#f7f7f7' : '#000e28',
+        borderColor: currentMode === 'light' ? '#f7f7f7' : '#000e28',
+      },
+      headerTintColor: currentMode === 'light' ? '#000' : '#fff',
       }}
       >
         <Tabs.Screen name='index'  options={{
           title: 'Home',
           headerTitle: '',
-          headerTintColor: '#000',
           headerLeft: () => {
             return (
                <View style={className`p-4`}>
@@ -143,12 +145,17 @@ const  Tablayout = () => {
           headerShown: true,
           headerTitle: 'Payment',
           headerTitleAlign: 'center',
-          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <View style={className`pl-4`}>
                 <TouchableOpacity onPress={() => router.back()}>
-                  <ArrowBack width={28} height={28}  />
+                  {
+                    currentMode === 'light' ? (
+                      <ArrowBack width={28} height={28}  />
+                    ) : (
+                      <ArrowBackWhite width={28} height={28}  />
+                    )
+                  }
                 </TouchableOpacity>
               </View>
             )
@@ -184,12 +191,17 @@ const  Tablayout = () => {
           title: 'Collections',
           headerTitle: 'Collections',
           headerTitleAlign: 'center',
-          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => router.back()}>
                 <View style={className`pl-2 flex-row items-center gap-2`}>
-                  <ArrowBack width={30} height={30}  />
+                {
+                    currentMode === 'light' ? (
+                      <ArrowBack width={28} height={28}  />
+                    ) : (
+                      <ArrowBackWhite width={28} height={28}  />
+                    )
+                  }
                 </View>
               </TouchableOpacity>
             )
@@ -223,12 +235,17 @@ const  Tablayout = () => {
           title: 'Settings',
           headerTitle: 'Settings',
           headerTitleAlign: 'center',
-          headerTintColor: '#000',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => router.back()}>
                 <View style={className`pl-2 flex-row items-center gap-2`}>
-                  <ArrowBack width={30} height={30}  />
+                {
+                    currentMode === 'light' ? (
+                      <ArrowBack width={28} height={28}  />
+                    ) : (
+                      <ArrowBackWhite width={28} height={28}  />
+                    )
+                  }
                 </View>
               </TouchableOpacity>
             )

@@ -92,16 +92,16 @@ const Home = () => {
   return (
       
         <View style={className` ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'} h-full flex-1 border-t-[#ff6e00] `}>
-          <View style={className`flex-1 bg-[#f96d0e]  h-60 w-full absolute top-0 rounded-br-3xl rounded-bl-3xl p-1`}></View>
+          <View style={className`flex-1 ${ currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}  h-60 w-full absolute top-0 rounded-br-3xl rounded-bl-3xl p-1`}></View>
              <ScrollView style={className`px-4 pt-4 `}>
               <View style={className` flex-row items-center justify-between px-4`}>
 
                 <View style={className` `}>
-                  <Text style={className`text-xl font-bold text-[#000]`} >Hello,</Text>
-                  <Text style={className`text-3xl font-bold text-white`} >Adebisi!</Text>
+                  <Text style={className`text-xl font-bold ${getmode.text}`} >Hello,</Text>
+                  <Text style={className`text-3xl font-bold ${getmode.text}`} >Adebisi!</Text>
                 </View>
 
-                <View style={className`p-2 border border-white rounded-xl flex-row items-center gap-1`}>
+                <View style={className`p-2 border border-white bg-[#f96d0e] rounded-xl flex-row items-center gap-1`}>
                   <Text style={className`text-xs font-bold text-white`}>092139101</Text>
                   <TouchableOpacity onPress={() =>copyToClipboard('092139101')}>
                      <Copy width={16} height={16}  />
@@ -109,11 +109,11 @@ const Home = () => {
                 </View>
               </View>
 
-              <View style={className`p-4 rounded-xl my-3 bg-[#f9780e]`}>
+              <View style={className`p-4 rounded-xl my-3 bg-[#f96d0e]`}>
                   <Text style={className`text-white font-bold text-sm italic`}>Tier 3 Verification in progress</Text>
               </View>
 
-              <View style={className`p-4 rounded-xl my-3 bg-[#f9780e] flex-row justify-between items-center gap-4`}>
+              <View style={className`p-4 rounded-xl my-3 bg-[#f96d0e] flex-row justify-between items-center gap-4`}>
                   {
                     showBalance ? (
                   <Pressable onPress={toggleShowBalance}>
@@ -139,8 +139,8 @@ const Home = () => {
               <View style={className`my-1 flex-row items-center justify-between px-4`}>
                 <Text style={className`${getmode.text} font-bold text-sm`}>Transaction History</Text>
                 <View style={className`flex-row items-center `}>
-                <Filter width={22} height={22} stroke={'white'}/>
-                <FilterLine width={22} height={22} stroke={'white'}/>
+                <Filter width={22} height={22} stroke={`${currentMode === 'light' ? 'white' : '#000e28'}`}/>
+                <FilterLine width={22} height={22} stroke={`${currentMode === 'light' ? '' : '#fff'}`} />
 
                 </View>
               </View>

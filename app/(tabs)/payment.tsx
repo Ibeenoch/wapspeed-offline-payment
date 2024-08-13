@@ -74,7 +74,7 @@ const Payment = () => {
                   </View>
 
                 
-                    <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#f96d0e' : 'white'}`} />
+                    <ArrowForward width={20} height={20} stroke={`${currentMode === 'light' ? '#f96d0e' : '#f96d0e'}`} />
       
                 </View>
               </View>

@@ -2,13 +2,16 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-// LOG  {"name":"John Doe","amount":50000,"merchantName":"Merchant XYZ","senderId":"123456","transactionRef":"TXN987654"}
+// Merchant Name: Sunday Adelodun
+// Account Number: 1300577762
+// Store Name: Sunday Store
+// Amount: 523.55
+
 interface QrcodeDecoded {
-  name: string;
-  amount: number;
-  merchantName: string;
-  senderId: string;
-  transactionRef: string;
+  'Merchant Name': string;
+  'Account Number': string;
+  'Store Name': string;
+  Amount: string;
 }
 
 interface authState {
@@ -43,11 +46,10 @@ const initialState: authState = {
   skeletonCard: false,
   skeletonSaving: false,
   qrCodedetails: {
-    name: '',
-    amount: 0,
-    merchantName: '',
-    senderId: '',
-    transactionRef: '',
+    'Merchant Name': '',
+    'Account Number': '',
+    'Store Name': '',
+    Amount: '',
   }
 };
 
