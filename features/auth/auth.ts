@@ -28,6 +28,7 @@ interface authState {
   skeletonHome: boolean;
   skeletonCard: boolean;
   skeletonSaving: boolean;
+  hasSentSms: boolean;
   qrCodedetails: QrcodeDecoded;
 }
 
@@ -45,6 +46,7 @@ const initialState: authState = {
   skeletonHome: false,
   skeletonCard: false,
   skeletonSaving: false,
+  hasSentSms: false,
   qrCodedetails: {
     'Merchant Name': '',
     'Account Number': '',
@@ -93,6 +95,9 @@ const authSlice = createSlice({
     setSkeletonSaving: (state, action: PayloadAction<boolean>) => {
       state.skeletonSaving = action.payload;
     },
+    setHasSentSMS: (state, action: PayloadAction<boolean>) => {
+      state.hasSentSms = action.payload;
+    },
     setQRcodeDetails: (state, action: PayloadAction<QrcodeDecoded>) => {
       state.qrCodedetails = action.payload;
     }
@@ -104,5 +109,5 @@ const authSlice = createSlice({
 
 export const selectUser = (state: RootState) => state.auth;
 
-export const {  setValue, shouldShowModal, setPasscode, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
+export const {  setValue, shouldShowModal, setPasscode, setHasSentSMS, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
 export default authSlice.reducer;

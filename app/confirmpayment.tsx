@@ -5,16 +5,17 @@ import { router } from 'expo-router';
 import ArrowForward from '../assets/icons/arrow-right-icon.svg';
 import DeleteIconBlack from '../assets/icons/delete-left-icon.svg';
 import DeleteIconWhite from '../assets/icons/delete-left-icon-white.svg';
-import { useAppDispatch } from '../features/hooks';
-import { setPasscode, shouldShowModal } from '../features/auth/auth';
+import { useAppDispatch, useAppSelector } from '../features/hooks';
+import { selectUser, setPasscode, shouldShowModal } from '../features/auth/auth';
 import { delayNavigation } from '../utils/useIntervalHook';
 import ReUseableStyles from '../utils/reuseableColors';
+
 
 const Passcode = () => {
     const [currentIndex, setCurrentIndex] = useState<number>();
     const [passcodeReady, setPasscodeReady] = useState<boolean>(false);
     const [arrNum, setArrNum] = useState<string[]>(Array(6).fill(''));
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
     const getmode = ReUseableStyles();
     const currentMode = useColorScheme();
     const inputRefs = useRef<TextInput[]>([]);
@@ -75,10 +76,9 @@ const Passcode = () => {
       const passcode = arrNum.join('');
       dispatch(setPasscode(passcode));
       dispatch(shouldShowModal(true));
-      delayNavigation('success');
+      delayNavigation('laststep');
     }
 
- // dark '#000e28' : light '#f7f7f7'        
 
   return (
     <View style={className`flex-1 ${currentMode === 'light' ? 'bg-[#f7f7f7]' : 'bg-[#000e28]'}`}>

@@ -15,7 +15,6 @@ const Confirmdetails = () => {
   const getmode = ReUseableStyles();
   
   const now = moment().format('YYYY-MM-DD HH:mm:ss');
-  console.log('qrcode details is ', qrCodedetails, amount);
 
       const formatNumber = (value: string) => {
         // Remove any non-numeric characters

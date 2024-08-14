@@ -34,7 +34,12 @@ const Scanner = () => {
 
     const handleScan = (result: any) => {
       if(result && result.data){
-        console.log(result)
+        // console.log(result)
+        // const jsonString = JSON.stringify(jsonData);
+const byteSize = new TextEncoder().encode(result.data).length;
+
+console.log(`The size of the JSON data is ${byteSize} bytes.`);
+
         dispatch(setQRcodeDetails(JSON.parse(result.data)));
         setStart(false);
         router.push('confirmdetails')

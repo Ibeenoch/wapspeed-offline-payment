@@ -37,7 +37,13 @@
           "recordAudioAndriod": true
         }
       ],
-      "expo-build-properties"
+      "expo-build-properties",
+      [
+        "expo-secure-store",
+        {
+          "faceIDPermission": "Allow $(PRODUCT_NAME) to access your Face ID biometric data."
+        }
+      ]
     ],
     "extra": {
       "router": {

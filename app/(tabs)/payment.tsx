@@ -6,9 +6,8 @@ import PeerToPeer from '../../assets/icons/decentralized-icon.svg';
 import ArrowForward from '../../assets/icons/arrow-forward-icon.svg';
 import BankTransfer from '../../assets/icons/bank-transfer-icon (2).svg';
 import Bills from '../../assets/icons/bill-payment-icon.svg';
-import TransferTwo from '../../assets/icons/transaction-transfer-icon.svg';
 import AirtimeAndData from '../../assets/icons/airtime-data-icon.svg';
-import Offline from '../../assets/icons/offline-icon.svg';
+import Offline from '../../assets/icons/scan-svgrepo-com.svg';
 import { router } from 'expo-router';
 
 
@@ -24,7 +23,7 @@ const Payment = () => {
       name: 'Transfer To Other Bank',
     },
     {
-      name: 'Offline Payment',
+      name: 'Scan To Pay',
     },
     {
       name: 'Pay Bills',
@@ -35,8 +34,8 @@ const Payment = () => {
   ];
 
   const handleNavigation = (name: string) => {
-    if(name === 'Offline Payment'){
-      router.push('offline');
+    if(name === 'Scan To Pay'){
+      router.push('scanner');
     }
   }
 
@@ -58,7 +57,7 @@ const Payment = () => {
                         : payment.name === 'Transfer To Other Bank' ? (
                           <BankTransfer width={20} height={20} fill={'white'} />
                         )
-                        : payment.name === 'Offline Payment' ? (
+                        : payment.name === 'Scan To Pay' ? (
                           <Offline width={20} height={20} fill={'white'}/>
                         )
                         : payment.name === 'Airtime And Data' ? (

@@ -57,13 +57,25 @@ const App = () => {
                   headerTintColor:  currentMode === 'light' ? '#000' : '#fff',
                   }}  />
 
+                <Stack.Screen name='laststep'  options={{ 
+                   headerStyle: {
+                    backgroundColor:  currentMode === 'light' ? '#f7f7f7' : '#000e28',
+                  },
+                  title: 'Final Step',
+                  headerTitleAlign: 'center',
+                  headerTintColor:  currentMode === 'light' ? '#000' : '#fff',
+                  }}  />
                 <Stack.Screen name='success'  options={{ 
                    headerStyle: {
                     backgroundColor:  currentMode === 'light' ? '#f7f7f7' : '#000e28',
                   },
                   title: 'Processing',
                   headerTitleAlign: 'center',
-                  headerTintColor:  currentMode === 'light' ? '#000' : '#fff',
+                  headerLeft: () => {
+                    return (
+                      <></>
+                    )
+                  }
                   }}  />
             </Stack>
             {
