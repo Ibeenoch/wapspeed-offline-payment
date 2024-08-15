@@ -2,10 +2,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
-// Merchant Name: Sunday Adelodun
-// Account Number: 1300577762
-// Store Name: Sunday Store
-// Amount: 523.55
 
 interface QrcodeDecoded {
   'Merchant Name': string;
@@ -30,6 +26,7 @@ interface authState {
   skeletonSaving: boolean;
   hasSentSms: boolean;
   qrCodedetails: QrcodeDecoded;
+  sendCount: number;
 }
 
 const initialState: authState = {
@@ -47,6 +44,7 @@ const initialState: authState = {
   skeletonCard: false,
   skeletonSaving: false,
   hasSentSms: false,
+  sendCount: 0,
   qrCodedetails: {
     'Merchant Name': '',
     'Account Number': '',
@@ -100,6 +98,12 @@ const authSlice = createSlice({
     },
     setQRcodeDetails: (state, action: PayloadAction<QrcodeDecoded>) => {
       state.qrCodedetails = action.payload;
+    },
+    setSendCount: (state, action: PayloadAction<number>) => {
+      state.sendCount += action.payload;
+    },
+    resetSendCount: (state, action: PayloadAction<number>) => {
+      state.sendCount = action.payload;
     }
   },
 
@@ -109,5 +113,5 @@ const authSlice = createSlice({
 
 export const selectUser = (state: RootState) => state.auth;
 
-export const {  setValue, shouldShowModal, setPasscode, setHasSentSMS, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
+export const {  setValue, shouldShowModal, setSendCount, resetSendCount, setPasscode, setHasSentSMS, setQRcodeDetails, saveImageCaptured, setMainModalActive, setSkeletonCard, setSkeletonHome, setSkeletonSaving, setProcessPhoto, setSelectionModal, setActiveTab } = authSlice.actions;
 export default authSlice.reducer;

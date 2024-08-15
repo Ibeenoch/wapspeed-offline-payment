@@ -1,17 +1,18 @@
 import { View, Text, useColorScheme, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../features/hooks'
-import { selectUser, setHasSentSMS, shouldShowModal } from '../features/auth/auth';
+import { resetSendCount, selectUser, setHasSentSMS, setSendCount, shouldShowModal } from '../features/auth/auth';
 import Wait from '../assets/icons/announcement-color-icon.svg'
 import className from 'twrnc';
 import ReUseableStyles from '../utils/reuseableColors';
 import { router } from 'expo-router';
 import CryptoJs from 'crypto-es';
+import CryptoJS from 'crypto-js'
 import * as SMS from 'expo-sms';
 
 const LastStep = () => {
     const dispatch = useAppDispatch();
-    const { qrCodedetails, hasSentSms } = useAppSelector(selectUser);
+    const { qrCodedetails, hasSentSms, sendCount } = useAppSelector(selectUser);
     const getmode = ReUseableStyles();
     const currentMode = useColorScheme();
 
@@ -21,17 +22,49 @@ const LastStep = () => {
     }, [])
 
   const  handleSendEncryptedSMS = async() => {
-      let key = 'myright45'
-      const encryptedData = CryptoJs.AES.encrypt(JSON.stringify(qrCodedetails), key).toString();
-      console.log('encrypted data ', encryptedData);
-      await SMS.sendSMSAsync(
-        ['55567'], encryptedData
-      )
-      dispatch(setHasSentSMS(true))
+    // let payload = {"Name":"Sunday Adelodun","Amount":"75000","Time":"10:43 am"}
+    // const key = "`\x04\xd6,ge\x0f\xb3\xbe\xa2&\xf9\xaf:g\x9f\x14i\xbdr\xf3|\xb2=";
+    //   const encryptedData = CryptoJs.AES.encrypt(JSON.stringify(payload), key).toString();
+    //     const hexFormat = CryptoJs.enc.Hex.stringify(CryptoJs.enc.Base64.parse(encryptedData))
+
+      // 192-bit key (24 bytes)
+      const key = CryptoJS.enc.Hex.parse('6004d62c67650fb3bea226f9af3a679f1469bd72f37cb23d');
+
+      // Data to encrypt
+      const data = `{"Name":"${qrCodedetails['Merchant Name']}","Amount":"${qrCodedetails.Amount}","Time":"12:43 am"}`;
+  console.log(data);
+      // Encrypting
+      const encrypted = CryptoJS.AES.encrypt(data, key, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+      });
+  
+      // Convert encrypted data to hex format
+      const encryptedHex = encrypted.ciphertext.toString(CryptoJS.enc.Hex);
+  
+      console.log('encrypted data now is ', encryptedHex, encryptedHex.length, sendCount);
+      
+      if(sendCount === 0 || isNaN(sendCount) || sendCount === null ){
+        await SMS.sendSMSAsync(
+            ['07044214274'], encryptedHex
+          )
+          dispatch(setSendCount(1))
+          console.log('i increased');
+      }else{
+        await SMS.sendSMSAsync(
+            ['07044214274'], ''
+          )
+        //   
+          dispatch(setSendCount(1))
+        }
+        dispatch(setHasSentSMS(true))
+     
+      
     }
 
 const handleSuccess = () => {
     if(hasSentSms){
+        dispatch(resetSendCount(0))
         router.push('success')
     }
 }
